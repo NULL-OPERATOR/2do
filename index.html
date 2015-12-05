@@ -1,0 +1,60 @@
+<!doctype html>
+<html ng-app="todoapp">
+
+
+<head>
+<meta charset="utf-8">
+<title>THINGZ2DO</title>
+
+
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script> -->
+<!-- Firebase -->
+<!-- <script src="https://cdn.firebase.com/js/client/2.2.4/firebase.js"></script> -->
+<!-- AngularFire -->
+<!-- <script src="https://cdn.firebase.com/libs/angularfire/1.1.3/angularfire.min.js"></script> -->
+
+<!-- <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.js'></script> -->
+<!-- Semantic -->
+<link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
+<script src="semantic/dist/semantic.min.js"></script>
+<!-- Angular -->
+<script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.1.5/angular.min.js'></script>
+<!-- Firebase -->
+<script src="https://cdn.firebase.com/js/client/2.3.2/firebase.js"></script>
+<script src='https://cdn.firebase.com/libs/angularfire/0.3.0/angularfire.min.js'></script>
+<!-- /JS -->
+<script src="js/controller.js"></script>
+
+
+  <body ng-controller="todoCtrl">
+    <div class="container">
+      <div class="ui list"><h4>DOOOOO IT</h4></div>
+      <div class="ui " ng-repeat="todo in todos">
+        <input type="checkbox" ng-model="todo.done">
+        <input class="todo" type="text" value="{{todo.text}}">
+        <div class="ui icon buttons">
+          <button class="ui button" ng-click="moveTodo($index, 'not up')">
+            <i class="angle down icon"></i>
+          </button>
+          <button class="ui button" ng-click="moveTodo($index, 'up')">
+            <i class="angle up icon"></i>
+          </button>
+          <button class="ui button" ng-click="deleteTodo($index)">
+            <i class="ban icon"></i>
+          </button>
+        </div>
+
+        <!-- <a href="" ng-click="moveTodo($index, 'not up')">Move Down</a>
+        <a href="" ng-click="moveTodo($index, 'up')">Move Up</a>
+        <a href="" ng-click="deleteTodo($index)">Delete</a> -->
+      </div>
+
+      </div>
+      <div class="list-group-item">
+        <form ng-submit="addTodo()">
+          <input class='todo' type="text" ng-model="todoText">
+          <input type="submit" value="Add">
+        </form>
+      </div>
+  </body>
+</html>
