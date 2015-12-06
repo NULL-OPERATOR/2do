@@ -16,6 +16,7 @@
 <!-- <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.js'></script> -->
 <!-- Semantic -->
 <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
+<link rel="stylesheet" type="text/css" href="public/style.css">
 <script src="semantic/dist/semantic.min.js"></script>
 <!-- Angular -->
 <script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.1.5/angular.min.js'></script>
@@ -26,8 +27,9 @@
 <script src="js/controller.js"></script>
 
 
+
   <body ng-controller="todoCtrl">
-    <div class="container">
+    <div class="ui container segment" class="botched-ui">
       <div class="ui list"><h4>DOOOOO IT</h4></div>
       <div class="ui " ng-repeat="todo in todos">
         <input type="checkbox" ng-model="todo.done">
@@ -44,17 +46,16 @@
           </button>
         </div>
 
-        <!-- <a href="" ng-click="moveTodo($index, 'not up')">Move Down</a>
-        <a href="" ng-click="moveTodo($index, 'up')">Move Up</a>
-        <a href="" ng-click="deleteTodo($index)">Delete</a> -->
-      </div>
-
-      </div>
-      <div class="list-group-item">
-        <form ng-submit="addTodo()">
-          <input class='todo' type="text" ng-model="todoText">
-          <input type="submit" value="Add">
-        </form>
+        </div>
+        <div class="ui icon buttons">
+          <form ng-submit="addTodo()">
+            <input class='todo' type="text" ng-model="todoText">
+            <button class="ui button" type="submit">
+              <i class="add square icon"></i>
+            </button>
+            <input type="submit" value="Add">
+          </form>
+        </div>
       </div>
   </body>
 </html>
